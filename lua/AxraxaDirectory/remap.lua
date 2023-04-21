@@ -12,6 +12,8 @@ vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
 
 
+vim.keymap.set("n", "<CR>", "O")
+
 -- greatest remap ever
 vim.keymap.set("x", "<leader>p", [["_dP]])
 
@@ -74,24 +76,13 @@ function CommentOutLine()
         vim.api.nvim_buf_set_lines(buffer, current_line-1, current_line, false, {commented_line})
     end
 end
-vim.api.nvim_set_keymap('n', '<leader>c', ':lua CommentOutLine()<CR>', {noremap = true, silent = true})
+vim.keymap.set({'n','v'}, '<leader>c', ':lua CommentOutLine()<CR>', {noremap = true, silent = true})
 
 -- bracket completion
--- inoremap { {}<Esc>ha
 vim.api.nvim_set_keymap('i', '{', '{}<Esc>ha', {noremap = true})
-
--- inoremap ( ()<Esc>ha
 vim.api.nvim_set_keymap('i', '(', '()<Esc>ha', {noremap = true})
-
--- inoremap [ []<Esc>ha
 vim.api.nvim_set_keymap('i', '[', '[]<Esc>ha', {noremap = true})
-
--- inoremap " ""<Esc>ha
 vim.api.nvim_set_keymap('i', '"', '""<Esc>ha', {noremap = true})
-
--- inoremap ' ''<Esc>ha
 vim.api.nvim_set_keymap('i', "'", "''<Esc>ha", {noremap = true})
-
--- inoremap ` ``<Esc>ha
 vim.api.nvim_set_keymap('i', '`', '``<Esc>ha', {noremap = true})
 
