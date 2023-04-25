@@ -63,7 +63,23 @@ return require('packer').startup(function(use)
       }
     end
   }
+  use {
+    'nvim-tree/nvim-tree.lua',
+    requires = {
+      'nvim-tree/nvim-web-devicons', -- optional
+    },
+    config = function()
+      require("nvim-tree").setup {}
+    end
+  }
 
+  -- commenting out lines plguin
+  use {
+    'numToStr/Comment.nvim',
+    config = function()
+      require('Comment').setup()
+    end
+  }
   --always at the bottom of pacekr , !icons
   use 'nvim-tree/nvim-web-devicons'
 end)
