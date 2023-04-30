@@ -5,7 +5,11 @@ lsp.on_attach(function(client, bufnr)
 end)
 
 -- (Optional) Configure lua language server for neovim
-require('lspconfig').lua_ls.setup(lsp.nvim_lua_ls())
+local lspconfig = require('lspconfig')
+
+-- lspconfig.eslint.setup({
+--   root_dir = lspconfig.util.root_pattern('.git', '.eslintrc*', '.prettierrc*', '.editorconfig', 'package.json') })
+lspconfig.lua_ls.setup(lsp.nvim_lua_ls())
 
 lsp.setup()
 
@@ -16,6 +20,7 @@ cmp.setup({
     ['<CR>'] = cmp.mapping.confirm({ select = false }),
   },
   completion = {
-    completeopt = 'menu,menuone,noinsert'
+    completeopt = 'menu,menuone,noinsert',
+    max_items = 5,
   },
 })

@@ -80,6 +80,7 @@ return require('packer').startup(function(use)
       require('Comment').setup()
     end
   }
+  use "jiangmiao/auto-pairs"
   --always at the bottom of pacekr , !icons
   use 'nvim-tree/nvim-web-devicons'
 end)
