@@ -81,6 +81,7 @@ return require('packer').startup(function(use)
     end
   }
   use "jiangmiao/auto-pairs"
+  use 'mbbill/undotree'
   --always at the bottom of pacekr , !icons
   use 'nvim-tree/nvim-web-devicons'
 end)
