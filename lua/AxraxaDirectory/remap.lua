@@ -11,9 +11,9 @@ vim.keymap.set("n", "<A-u>", "<C-u>zz")
 vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
 
-vim.keymap.set("n","<leader>wv","<C-w>v")
-vim.keymap.set("n","<leader>wh","<C-w>h")
-vim.keymap.set("n","<leader>wl","<C-w>l")
+vim.keymap.set("n", "<leader>wv", "<C-w>v")
+vim.keymap.set("n", "<leader>wh", "<C-w>h")
+vim.keymap.set("n", "<leader>wl", "<C-w>l")
 
 vim.keymap.set("n", "<CR>", "o")
 vim.keymap.set("n", "<leader><CR>", "O")
@@ -49,3 +49,22 @@ vim.keymap.set("n", "<leader><tab>d", "<cmd>TroubleToggle document_diagnostics<c
   { silent = true, noremap = true }
 )
 
+-- html premade skeleton.
+function Insert_html_template()
+  local html_template = [[
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+</head>
+<body>
+</body>
+</html>
+]]
+  vim.api.nvim_put({ html_template }, '', true, true)
+end
+
+vim.api.nvim_set_keymap('n', '<space>!', ':lua Insert_html_template()<CR>', { silent = true })

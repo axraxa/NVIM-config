@@ -12,15 +12,15 @@ return require('packer').startup(function(use)
     requires = { { 'nvim-lua/plenary.nvim' } }
   }
 
-  use 'ingram1107/moneokai'
 
-  use({
-    'folke/tokyonight.nvim',
-    as = 'tokyonight',
-    config = function()
-      vim.cmd('colorscheme tokyonight-night')
-    end
-  })
+  -- use({
+  --   'folke/tokyonight.nvim',
+  --   as = 'tokyonight',
+  --   config = function()
+  --     vim.cmd('colorscheme tokyonight-night')
+  --   end
+  -- })
+  use 'AlexvZyl/nordic.nvim'
 
   use('ThePrimeagen/harpoon')
   use('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' })
@@ -72,7 +72,6 @@ return require('packer').startup(function(use)
       require("nvim-tree").setup {}
     end
   }
-
   -- commenting out lines plguin
   use {
     'numToStr/Comment.nvim',
@@ -82,6 +81,23 @@ return require('packer').startup(function(use)
   }
   use "jiangmiao/auto-pairs"
   use 'mbbill/undotree'
+  use({
+    "kylechui/nvim-surround",
+    tag = "*", -- Use for stability; omit to use `main` branch for the latest features
+    config = function()
+      require("nvim-surround").setup({
+        -- Configuration here, or leave empty to use defaults
+      })
+    end
+  })
+  use({
+    'Wansmer/treesj',
+    requires = { 'nvim-treesitter' },
+    config = function()
+      require('treesj').setup({ --[[ your config ]] })
+    end,
+  })
+  use {'tpope/vim-dadbod'}
   --always at the bottom of pacekr , !icons
   use 'nvim-tree/nvim-web-devicons'
 end)
