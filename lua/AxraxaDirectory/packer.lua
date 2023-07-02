@@ -11,17 +11,7 @@ return require('packer').startup(function(use)
     -- or                            , branch = '0.1.x',
     requires = { { 'nvim-lua/plenary.nvim' } }
   }
-
-
-  -- use({
-  --   'folke/tokyonight.nvim',
-  --   as = 'tokyonight',
-  --   config = function()
-  --     vim.cmd('colorscheme tokyonight-night')
-  --   end
-  -- })
   use 'AlexvZyl/nordic.nvim'
-
   use('ThePrimeagen/harpoon')
   use('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' })
 
@@ -32,7 +22,6 @@ return require('packer').startup(function(use)
       -- LSP Support
       { 'neovim/nvim-lspconfig' }, -- Required
       {
-        -- Optional
         'williamboman/mason.nvim',
         run = function()
           pcall(vim.cmd, 'MasonUpdate')
@@ -44,8 +33,12 @@ return require('packer').startup(function(use)
       { 'hrsh7th/nvim-cmp' },     -- Required
       { 'hrsh7th/cmp-nvim-lsp' }, -- Required
       { 'L3MON4D3/LuaSnip' },     -- Required
+      { 'saadparwaiz1/cmp_luasnip' },
+      { "rafamadriz/friendly-snippets" },
+
     }
   }
+
   use {
     'nvim-lualine/lualine.nvim',
     requires = { 'nvim-tree/nvim-web-devicons', opt = true }
@@ -57,9 +50,6 @@ return require('packer').startup(function(use)
     requires = "nvim-tree/nvim-web-devicons",
     config = function()
       require("trouble").setup {
-        -- your configuration comes here
-        -- or leave it empty to use the default settings
-        -- refer to the configuration section below
       }
     end
   }
@@ -97,7 +87,7 @@ return require('packer').startup(function(use)
       require('treesj').setup({ --[[ your config ]] })
     end,
   })
-  use {'tpope/vim-dadbod'}
+  use { 'tpope/vim-dadbod' }
   --always at the bottom of pacekr , !icons
   use 'nvim-tree/nvim-web-devicons'
 end)

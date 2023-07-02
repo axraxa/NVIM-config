@@ -4,16 +4,19 @@ vim.keymap.set("n", "<leader>pv", vim.cmd.NvimTreeToggle)
 vim.keymap.set("v", "<A-j>", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "<A-k>", ":m '<-2<CR>gv=gv")
 
+--end of the line and start of the line 8-9 lines
+vim.keymap.set({ "v", "n" }, "<leader>b", "0");
+vim.keymap.set({ "v", "n" }, "<leader>e", '$')
+
 vim.keymap.set("n", "J", "mzJ`z")
-vim.keymap.set("n", "<leader>e", '$')
 vim.keymap.set("n", "<A-d>", "<C-d>zz")
 vim.keymap.set("n", "<A-u>", "<C-u>zz")
 vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
 
 vim.keymap.set("n", "<leader>wv", "<C-w>v")
-vim.keymap.set("n", "<leader>wh", "<C-w>h")
-vim.keymap.set("n", "<leader>wl", "<C-w>l")
+vim.keymap.set("n", "<leader>h", "<C-w>h")
+vim.keymap.set("n", "<leader>l", "<C-w>l")
 
 vim.keymap.set("n", "<CR>", "o")
 vim.keymap.set("n", "<leader><CR>", "O")
