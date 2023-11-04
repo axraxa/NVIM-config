@@ -7,4 +7,19 @@
 
 -- ColorMyPencils()
 
-require 'nordic' .load()
+-- require 'nordic' .load()
+
+require("kanagawa").load("wave")
+--
+-- require("nightly").setup({
+-- 	transparent = false,
+-- 	styles = {
+-- 		comments = { italic = true },
+-- 		functions = { italic = false },
+-- 		variables = { italic = false },
+-- 		keywords = { italic = false },
+-- 	},
+-- 	highlights = {},
+-- })
+--
+-- require("nightly").load()
