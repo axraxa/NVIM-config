@@ -103,4 +103,5 @@ return require("packer").startup(function(use)
 		requires = { "mfussenegger/nvim-dap" },
 	})
 	use("jose-elias-alvarez/null-ls.nvim")
+  use ( { 'andweeb/presence.nvim' } )
 end)
